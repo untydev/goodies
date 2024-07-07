@@ -1,0 +1,43 @@
+{
+  "name": "@untydev/props",
+  "version": "1.0.0",
+  "description": "Access nested object properties using paths",
+  "keywords": [
+    "object",
+    "path",
+    "dot",
+    "prop",
+    "property",
+    "notation",
+    "access",
+    "deep",
+    "nested"
+  ],
+  "author": "Untydev <npm@unty.dev>",
+  "license": "MIT",
+  "main": "lib/props.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untydev/goodies.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/untydev/goodies/issues"
+  },
+  "homepage": "https://github.com/untydev/goodies#readme"
+}

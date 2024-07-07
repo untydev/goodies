@@ -1,0 +1,44 @@
+{
+  "name": "@untydev/result",
+  "version": "1.0.0",
+  "description": "Handle function call results using a common type",
+  "keywords": [
+    "result",
+    "outcome",
+    "maybe",
+    "expected",
+    "try",
+    "catch",
+    "promise"
+  ],
+  "author": "Untydev <npm@unty.dev>",
+  "license": "MIT",
+  "main": "lib/result.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untydev/goodies.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/untydev/goodies/issues"
+  },
+  "homepage": "https://github.com/untydev/goodies#readme",
+  "dependencies": {
+    "@untydev/types": "^1.0.0"
+  }
+}

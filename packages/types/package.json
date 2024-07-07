@@ -1,0 +1,37 @@
+{
+  "name": "@untydev/types",
+  "version": "1.0.0",
+  "description": "Dynamic type checking utilities for JavaScript",
+  "keywords": [
+    "type",
+    "check",
+    "ensure"
+  ],
+  "author": "Untydev <npm@unty.dev>",
+  "license": "MIT",
+  "main": "lib/types.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untydev/goodies.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/untydev/goodies/issues"
+  },
+  "homepage": "https://github.com/untydev/goodies#readme"
+}
