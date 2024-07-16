@@ -85,6 +85,18 @@ isNumber(NaN) === false
 isNumber(Infinity) === false
 ```
 
+### `isBigInt(v)`
+
+Checks whether `v` is a `BigInt`.
+
+```js
+import { isBigInt } from '@untydev/types'
+
+isBigInt(1) === false
+isBigInt(1n) === true
+isBigInt(BigInt(1)) === true
+```
+
 ### `isString(v)`
 
 Checks whether `v` is a string, excluding `String` object.
