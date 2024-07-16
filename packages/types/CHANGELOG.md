@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Update this changelog
+
+# [1.1.1] - 2024-07-16
+### Changed
+- Update this changelog
 - Document usage of `isBigInt` function
 
 ## [1.1.0] - 2024-07-16
