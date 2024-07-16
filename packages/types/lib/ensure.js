@@ -34,6 +34,10 @@ export function ensureNumber (v) {
   return ensureType(v, is.isNumber, labels.numberType)
 }
 
+export function ensureBigInt (v) {
+  return ensureType(v, is.isBigInt, labels.bigIntType)
+}
+
 export function ensureString (v) {
   return ensureType(v, is.isString, labels.stringType)
 }

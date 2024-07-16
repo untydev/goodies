@@ -20,6 +20,10 @@ test('typeOf() returns label for number value', (t) => {
   t.is(typeOf(values.numberValue), labels.numberType)
 })
 
+test('typeOf() returns label for BigInt value', (t) => {
+  t.is(typeOf(values.bigIntValue), labels.bigIntType)
+})
+
 test('typeOf() returns label for NaN value', (t) => {
   t.is(typeOf(values.NaNValue), labels.NaNType)
 })
