@@ -2,6 +2,7 @@ export const undefinedValue = undefined
 export const nullValue = null
 export const booleanValue = true
 export const integerValue = 1
+export const bigIntValue = 1n
 export const numberValue = 0.1
 export const NaNValue = NaN
 export const plusInfinityValue = Infinity

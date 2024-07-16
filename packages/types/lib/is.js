@@ -26,6 +26,10 @@ export function isNumber (v) {
   return typeof v === labels.numberType && isFinite(v)
 }
 
+export function isBigInt (v) {
+  return typeof v === labels.bigIntType
+}
+
 export function isString (v) {
   return typeof v === labels.stringType
 }
