@@ -141,6 +141,22 @@ isObject(null) === false
 isObject('') === false
 ```
 
+### `isPlainObject(v)`
+
+Checks whether `v` is an object a plain object which is an object created by the `Object` constructor or one with a
+`[[Prototype]] of null. 
+
+```js
+import { isPlainObject } from '@untydev/types'
+
+isPlainObject({}) === true
+isPlainObject(Object.create(null)) === true
+isPlainObject(null) === false
+
+class X {}
+isPlainObject(new X()) === false
+```
+
 ### `isSymbol(v)`
 
 Checks whether `v` is a `Symbol`.

@@ -46,6 +46,27 @@ export function isObject (v) {
   return v !== null && (typeof v === labels.objectType || v === labels.functionType)
 }
 
+export function isPlainObject (value) {
+  if (!isObject(value)) {
+    return false
+  }
+
+  if (Object.getPrototypeOf(value) === null) {
+    return true
+  }
+
+  if (Object.prototype.toString.call(value) !== '[object Object]') {
+    return false
+  }
+
+  let prototype = value
+  while (Object.getPrototypeOf(prototype) !== null) {
+    prototype = Object.getPrototypeOf(prototype)
+  }
+
+  return Object.getPrototypeOf(value) === prototype
+}
+
 export function isIterable (v) {
   return v != null && typeof v[Symbol.iterator] === labels.functionType
 }

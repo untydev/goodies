@@ -3,7 +3,7 @@ export const nullValue = null
 export const booleanValue = true
 export const integerValue = 1
 export const bigIntValue = 1n
-export const numberValue = 0.1
+export const floatValue = 0.1
 export const NaNValue = NaN
 export const plusInfinityValue = Infinity
 export const minusInfinityValue = -Infinity
@@ -17,3 +17,4 @@ export const classValue = new class {}()
 export const functionValue = () => undefined
 export const symbolValue = Symbol('test')
 export const promiseValue = Promise.resolve()
+export const promiseLikeValue = { then: function () {} }

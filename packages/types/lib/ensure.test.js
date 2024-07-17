@@ -1,310 +1,195 @@
 import test from 'ava'
+
 import * as values from './detail/values.js'
 import * as ensure from './ensure.js'
 
-test('ensureUndefined() returns value or throws error depending on the argument type', (t) => {
+test('ensureUndefined does not throw for an undefined value', (t) => {
   t.is(ensure.ensureUndefined(values.undefinedValue), values.undefinedValue)
+})
+
+test('ensureUndefined throws for a null value', (t) => {
   t.throws(() => ensure.ensureUndefined(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureUndefined(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureDefined() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureDefined(values.undefinedValue), { instanceOf: TypeError })
+test('ensureDefined does not throw for a null value', (t) => {
   t.is(ensure.ensureDefined(values.nullValue), values.nullValue)
-  t.is(ensure.ensureDefined(values.booleanValue), values.booleanValue)
-  t.is(ensure.ensureDefined(values.integerValue), values.integerValue)
-  t.is(ensure.ensureDefined(values.numberValue), values.numberValue)
-  t.is(ensure.ensureDefined(values.bigIntValue), values.bigIntValue)
-  t.is(ensure.ensureDefined(values.NaNValue), values.NaNValue)
-  t.is(ensure.ensureDefined(values.plusInfinityValue), values.plusInfinityValue)
-  t.is(ensure.ensureDefined(values.minusInfinityValue), values.minusInfinityValue)
-  t.is(ensure.ensureDefined(values.stringValue), values.stringValue)
-  t.is(ensure.ensureDefined(values.arrayValue), values.arrayValue)
-  t.is(ensure.ensureDefined(values.typedArrayValue), values.typedArrayValue)
-  t.is(ensure.ensureDefined(values.mapValue), values.mapValue)
-  t.is(ensure.ensureDefined(values.setValue), values.setValue)
-  t.is(ensure.ensureDefined(values.objectValue), values.objectValue)
-  t.is(ensure.ensureDefined(values.classValue), values.classValue)
-  t.is(ensure.ensureDefined(values.functionValue), values.functionValue)
-  t.is(ensure.ensureDefined(values.symbolValue), values.symbolValue)
-  t.is(ensure.ensureDefined(values.promiseValue), values.promiseValue)
 })
 
-test('ensureNull() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureNull(values.undefinedValue), { instanceOf: TypeError })
+test('ensureDefined throws for an undefined value', (t) => {
+  t.throws(() => ensure.ensureDefined(values.undefinedValue), { instanceOf: TypeError })
+})
+
+test('ensureNull does not throw for a null value', (t) => {
   t.is(ensure.ensureNull(values.nullValue), values.nullValue)
-  t.throws(() => ensure.ensureNull(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNull(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureBoolean() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureBoolean(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.nullValue), { instanceOf: TypeError })
+test('ensureNull throws for an undefined value', (t) => {
+  t.throws(() => ensure.ensureNull(values.undefinedValue), { instanceOf: TypeError })
+})
+
+test('ensureBoolean does not throw for a boolean value', (t) => {
   t.is(ensure.ensureBoolean(values.booleanValue), values.booleanValue)
-  t.throws(() => ensure.ensureBoolean(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBoolean(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureInteger() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureInteger(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.booleanValue), { instanceOf: TypeError })
+test('ensureBoolean throws for an integer value', (t) => {
+  t.throws(() => ensure.ensureBoolean(values.integerValue), { instanceOf: TypeError })
+})
+
+test('ensureBoolean throws for a string containing a boolean value', (t) => {
+  t.throws(() => ensure.ensureBoolean('true'), { instanceOf: TypeError })
+})
+
+test('ensureInteger does not throw for an integer value', (t) => {
   t.is(ensure.ensureInteger(values.integerValue), values.integerValue)
-  t.throws(() => ensure.ensureInteger(values.numberValue), { instanceOf: TypeError })
+})
+
+test('ensureInteger throws for a big integer value', (t) => {
   t.throws(() => ensure.ensureInteger(values.bigIntValue), { instanceOf: TypeError })
+})
+
+test('ensureInteger throws for a float value', (t) => {
+  t.throws(() => ensure.ensureInteger(values.floatValue), { instanceOf: TypeError })
+})
+
+test('ensureInteger throws for NaN value', (t) => {
   t.throws(() => ensure.ensureInteger(values.NaNValue), { instanceOf: TypeError })
+})
+
+test('ensureInteger throws for Infinity values', (t) => {
   t.throws(() => ensure.ensureInteger(values.plusInfinityValue), { instanceOf: TypeError })
   t.throws(() => ensure.ensureInteger(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureInteger(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureNumber() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureNumber(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.booleanValue), { instanceOf: TypeError })
+test('ensureInteger throws for a string containing an integer value', (t) => {
+  t.throws(() => ensure.ensureInteger('1'), { instanceOf: TypeError })
+})
+
+test('ensureNumber does not throws for a number', (t) => {
   t.is(ensure.ensureNumber(values.integerValue), values.integerValue)
-  t.is(ensure.ensureNumber(values.numberValue), values.numberValue)
+  t.is(ensure.ensureNumber(values.floatValue), values.floatValue)
+})
+
+test('ensureNumber throws for a big integer value', (t) => {
   t.throws(() => ensure.ensureNumber(values.bigIntValue), { instanceOf: TypeError })
+})
+
+test('ensureNumber throws for NaN value', (t) => {
   t.throws(() => ensure.ensureNumber(values.NaNValue), { instanceOf: TypeError })
+})
+
+test('ensureNumber throws for infinite values', (t) => {
   t.throws(() => ensure.ensureNumber(values.plusInfinityValue), { instanceOf: TypeError })
   t.throws(() => ensure.ensureNumber(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureNumber(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureBigInt() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureBigInt(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.numberValue), { instanceOf: TypeError })
+test('ensureNumber throws for a string containing a number', (t) => {
+  t.throws(() => ensure.ensureNumber('1'), { instanceOf: TypeError })
+  t.throws(() => ensure.ensureNumber('1.2'), { instanceOf: TypeError })
+})
+
+test('ensureBigInt does not throw for a big integer value', (t) => {
   t.is(ensure.ensureBigInt(values.bigIntValue), values.bigIntValue)
+})
+
+test('ensureBigInt throws for a number value', (t) => {
+  t.throws(() => ensure.ensureBigInt(values.integerValue), { instanceOf: TypeError })
+  t.throws(() => ensure.ensureBigInt(values.floatValue), { instanceOf: TypeError })
+})
+
+test('ensureBigInt throws for NaN value', (t) => {
   t.throws(() => ensure.ensureBigInt(values.NaNValue), { instanceOf: TypeError })
+})
+
+test('ensureBigInt throws for infinite values', (t) => {
   t.throws(() => ensure.ensureBigInt(values.plusInfinityValue), { instanceOf: TypeError })
   t.throws(() => ensure.ensureBigInt(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureBigInt(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureString() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureString(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.minusInfinityValue), { instanceOf: TypeError })
+test('ensureBigInt throws for a string containing a big integer value', (t) => {
+  t.throws(() => ensure.ensureBigInt('999999999999999999999999999'), { instanceOf: TypeError })
+})
+
+test('ensureString does not throw for a string', (t) => {
   t.is(ensure.ensureString(values.stringValue), values.stringValue)
-  t.throws(() => ensure.ensureString(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureString(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureArray() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureArray(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.stringValue), { instanceOf: TypeError })
+test('ensureString throws for an integer value', (t) => {
+  t.throws(() => ensure.ensureString(values.integerValue), { instanceOf: TypeError })
+})
+
+test('ensureArray does not throw for an array', (t) => {
   t.deepEqual(ensure.ensureArray(values.arrayValue), values.arrayValue)
+})
+
+test('ensureArray throws for a typed array', (t) => {
   t.throws(() => ensure.ensureArray(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.setValue), { instanceOf: TypeError })
+})
+
+test('ensureArray throws for an object', (t) => {
   t.throws(() => ensure.ensureArray(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureArray(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureFunction() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureFunction(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.classValue), { instanceOf: TypeError })
+test('ensureFunction does not throw for a function', (t) => {
   t.deepEqual(ensure.ensureFunction(values.functionValue), values.functionValue)
-  t.throws(() => ensure.ensureFunction(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureFunction(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureObject() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureObject(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.stringValue), { instanceOf: TypeError })
-  t.deepEqual(ensure.ensureObject(values.arrayValue), values.arrayValue)
-  t.deepEqual(ensure.ensureObject(values.typedArrayValue), values.typedArrayValue)
-  t.deepEqual(ensure.ensureObject(values.mapValue), values.mapValue)
-  t.deepEqual(ensure.ensureObject(values.setValue), values.setValue)
+test('ensureFunction throws for an object', (t) => {
+  t.throws(() => ensure.ensureFunction(values.objectValue), { instanceOf: TypeError })
+})
+
+test('ensureObject does not throws for an object', (t) => {
   t.deepEqual(ensure.ensureObject(values.objectValue), values.objectValue)
-  t.deepEqual(ensure.ensureObject(values.classValue), values.classValue)
+})
+
+test('ensureObject throws for a function', (t) => {
   t.throws(() => ensure.ensureObject(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureObject(values.symbolValue), { instanceOf: TypeError })
-  t.deepEqual(ensure.ensureObject(values.promiseValue), values.promiseValue)
 })
 
-test('ensureIterable() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureIterable(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.minusInfinityValue), { instanceOf: TypeError })
-  t.is(ensure.ensureIterable(values.stringValue), values.stringValue)
-  t.is(ensure.ensureIterable(values.arrayValue), values.arrayValue)
-  t.is(ensure.ensureIterable(values.typedArrayValue), values.typedArrayValue)
-  t.is(ensure.ensureIterable(values.mapValue), values.mapValue)
-  t.is(ensure.ensureIterable(values.setValue), values.setValue)
+test('ensurePlainObject does not throw for an object created from object literal', (t) => {
+  t.deepEqual(ensure.ensurePlainObject(values.objectValue), values.objectValue)
+})
+
+test('ensurePlainObject does not throw for an object with the prototype of null', (t) => {
+  const o = Object.create(null)
+  t.deepEqual(ensure.ensurePlainObject(o), o)
+})
+
+test('ensurePlainObject throws for a class', (t) => {
+  t.throws(() => ensure.ensurePlainObject(values.classValue), { instanceOf: TypeError })
+})
+
+test('ensurePlainObject throws for a function', (t) => {
+  t.throws(() => ensure.ensurePlainObject(values.functionValue), { instanceOf: TypeError })
+})
+
+test('ensureIterable does not throw for iterables', (t) => {
+  t.deepEqual(ensure.ensureIterable(values.stringValue), values.stringValue)
+  t.deepEqual(ensure.ensureIterable(values.arrayValue), values.arrayValue)
+  t.deepEqual(ensure.ensureIterable(values.typedArrayValue), values.typedArrayValue)
+  t.deepEqual(ensure.ensureIterable(values.setValue), values.setValue)
+  t.deepEqual(ensure.ensureIterable(values.mapValue), values.mapValue)
+})
+
+test('ensureIterable throws for an object', (t) => {
   t.throws(() => ensure.ensureIterable(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.symbolValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureIterable(values.promiseValue), { instanceOf: TypeError })
 })
 
-test('ensureSymbol() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensureSymbol(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.minusInfinityValue), { instanceOf: TypeError })
+test('ensureSymbol does not throw for a symbol', (t) => {
+  t.is(ensure.ensureSymbol(values.symbolValue), values.symbolValue)
+})
+
+test('ensureSymbol throws for a string', (t) => {
   t.throws(() => ensure.ensureSymbol(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensureSymbol(values.functionValue), { instanceOf: TypeError })
-  t.deepEqual(ensure.ensureSymbol(values.symbolValue), values.symbolValue)
 })
 
-test('ensurePromise() returns value or throws error depending on the argument type', (t) => {
-  t.throws(() => ensure.ensurePromise(values.undefinedValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.nullValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.booleanValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.integerValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.numberValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.bigIntValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.NaNValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.plusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.minusInfinityValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.stringValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.arrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.typedArrayValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.mapValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.setValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.objectValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.classValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.functionValue), { instanceOf: TypeError })
-  t.throws(() => ensure.ensurePromise(values.symbolValue), { instanceOf: TypeError })
-  t.is(ensure.ensurePromise(values.promiseValue), values.promiseValue)
+test('ensurePromise does not throws for a promise', (t) => {
+  t.deepEqual(ensure.ensurePromise(values.promiseValue), values.promiseValue)
+})
+
+test('ensurePromise does not throws for a promise-like value', (t) => {
+  t.deepEqual(ensure.ensurePromise(values.promiseLikeValue), values.promiseLikeValue)
+})
+
+test('ensurePromise throws if then is not a function', (t) => {
+  t.throws(() => ensure.ensurePromise({ then: true }), { instanceOf: TypeError })
 })

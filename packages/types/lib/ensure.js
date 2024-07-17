@@ -1,6 +1,7 @@
 import * as is from './is.js'
 import * as labels from './detail/labels.js'
 import { typeOf } from './typeof.js'
+import { isPlainObject } from './is.js'
 
 function failWith (e) {
   throw e
@@ -52,6 +53,10 @@ export function ensureFunction (v) {
 
 export function ensureObject (v) {
   return ensureType(v, is.isObject, labels.objectType)
+}
+
+export function ensurePlainObject (v) {
+  return isPlainObject(v) ? v : failWith(new TypeError('Expected plain object'))
 }
 
 export function ensureIterable (v) {
