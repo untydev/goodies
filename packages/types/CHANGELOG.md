@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Update this changelog
+ 
+### Added
+- Added `isPlainObject` and `ensurePlainObject` functions
 
 # [1.1.1] - 2024-07-16
 ### Changed
