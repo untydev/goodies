@@ -17,7 +17,7 @@ test('typeOf() returns label for boolean value', (t) => {
 
 test('typeOf() returns label for number value', (t) => {
   t.is(typeOf(values.integerValue), labels.numberType)
-  t.is(typeOf(values.numberValue), labels.numberType)
+  t.is(typeOf(values.floatValue), labels.numberType)
 })
 
 test('typeOf() returns label for BigInt value', (t) => {
