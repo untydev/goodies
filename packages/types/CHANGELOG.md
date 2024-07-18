@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Update this changelog
 
+### Fixed
+- Fixed failing `typeOf` tests
+
 # [1.2.0] - 2024-07-17
 ### Changed
 - Update this changelog
