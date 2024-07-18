@@ -9,5 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Update this changelog
 
+## [v1.0.0] - 2024-07-18
+### Changed
+- Update this changelog
+- 
 ### Added
 - `merge` function to merge properties of two objects
