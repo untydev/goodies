@@ -1,0 +1,43 @@
+{
+  "name": "@untydev/merge",
+  "version": "1.0.0",
+  "description": "Merge object properties deeply.",
+  "keywords": [
+    "object",
+    "merge",
+    "deep",
+    "properties",
+    "nested"
+  ],
+  "author": "Untydev <npm@unty.dev>",
+  "license": "MIT",
+  "main": "lib/merge.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untydev/goodies.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/untydev/goodies/issues"
+  },
+  "homepage": "https://github.com/untydev/goodies#readme",
+  "dependencies": {
+    "@untydev/iterate": "^1.0.0",
+    "@untydev/types": "^1.2.0"
+  }
+}
