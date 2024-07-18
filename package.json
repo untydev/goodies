@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "test": "ava",
-    "lint": "standard --fix"
+    "lint": "standard",
+    "prepare": "husky"
   },
   "devDependencies": {
     "ava": "^6.1.3",
+    "husky": "^9.1.0",
     "standard": "^17.1.0"
   },
   "workspaces": [
