@@ -1,7 +1,7 @@
 {
   "name": "@untydev/types",
   "version": "1.2.0",
-  "description": "Dynamic type checking utilities for JavaScript",
+  "description": "Dynamic type checking utilities for JavaScript.",
   "keywords": [
     "type",
     "check",
