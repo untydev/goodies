@@ -16,6 +16,7 @@
     "packages/iterate",
     "packages/merge",
     "packages/options",
+    "packages/pretty",
     "packages/props",
     "packages/result",
     "packages/types"
