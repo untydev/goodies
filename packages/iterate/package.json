@@ -1,7 +1,7 @@
 {
   "name": "@untydev/iterate",
   "version": "1.0.0",
-  "description": "Iterate over objects, strings and collections",
+  "description": "Iterate over objects, strings and collections.",
   "keywords": [
     "for",
     "each"
