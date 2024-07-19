@@ -1,7 +1,7 @@
 {
   "name": "@untydev/options",
   "version": "1.0.0",
-  "description": "Handle default options in functions",
+  "description": "Handle default options in functions.",
   "keywords": [
     "opts",
     "options",
