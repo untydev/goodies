@@ -1,7 +1,7 @@
 {
   "name": "@untydev/props",
   "version": "1.0.0",
-  "description": "Access nested object properties using paths",
+  "description": "Access nested object properties using paths.",
   "keywords": [
     "object",
     "path",
