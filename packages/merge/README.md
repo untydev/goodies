@@ -29,8 +29,8 @@ merge(destination, source)
 ### `merge([destination: Object], [source: Object]): Object`
 
 Merges own properties of `source` into `destination`. Source properties that resolve to `undefined` are skipped. Arrays
-and plain objects are merged recursively. Elements of the source array are appended to the elements of the destination
-array. Other values are copied by assignment.
+and plain objects are merged recursively. Destination arrays are replaced by source arrays. Source arrays are cloned
+recursively. Other values are copied by assignment.
 
 ```
 import merge from '@untydev/merge`
@@ -42,13 +42,13 @@ merge({ a: { b: true } }, { a: { a: true } })
 // destination = { a: { a: true, b: true } }
 
 merge({ a: [1, 2] }, { a: [3, 4] })
-// destination = [1, 2, 3, 4]
+// destination = { a: [3, 4] }
 
 merge({ a: true }, { a: [1, 2] })
 // destination = { a: [1, 2] }
 
-merge({ a: [{ b: [1, 2] }] }, { a: [{ b: [3, 4] }])
-// destinatin = { a: [{ b: [1, 2, 3, 4 }]
+merge({ a: [{ b: [1, 2] }] }, { a: [{ b: [3, 4] }] })
+// destination = { a: [{ b: [3, 4] }] }
 ```
 
 If the `destination` is undefined, an object will be created. If the `destination` is not an object, a `TypeError`
