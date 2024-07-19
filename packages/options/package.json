@@ -1,0 +1,41 @@
+{
+  "name": "@untydev/options",
+  "version": "1.0.0",
+  "description": "Handle default options in functions",
+  "keywords": [
+    "opts",
+    "options",
+    "default",
+    "defaults"
+  ],
+  "author": "Untydev <npm@unty.dev>",
+  "license": "MIT",
+  "main": "lib/options.js",
+  "type": "module",
+  "engines": {
+    "node": ">=17.9.1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untydev/goodies.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/untydev/goodies/issues"
+  },
+  "homepage": "https://github.com/untydev/goodies#readme",
+  "dependencies": {
+    "@untydev/merge": "^1.0.0"
+  }
+}
