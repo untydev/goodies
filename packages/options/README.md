@@ -36,7 +36,7 @@ doSomething({ secondOption: 'b' })
 
 ## API
 
-### `makeOptions(inputOptions: Object, [defaultOptions: Object]): Object`
+### `makeOptions([inputOptions: Object], [defaultOptions: Object]): Object`
 
 Merges `inputOptions` with `defaultOptions` and returns a new object. None of the input arguments is modified. The
 merging is done with `@untydev/merge` function.

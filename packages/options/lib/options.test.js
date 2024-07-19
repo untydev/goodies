@@ -24,17 +24,23 @@ test('makeOptions overrides default options', (t) => {
   t.deepEqual(makeOptions(inputOptions, defaultOptions), inputOptions)
 })
 
+test('makeOptions creates an inputOptions object if it is undefined', (t) => {
+  t.deepEqual(makeOptions(undefined, { a: true }), { a: true })
+})
+
 test('makeOptions throws if input options is not a plain object', (t) => {
   class X {}
-  t.throws(() => makeOptions(undefined, {}), { instanceOf: TypeError })
   t.throws(() => makeOptions(null, {}), { instanceOf: TypeError })
   t.throws(() => makeOptions('', {}), { instanceOf: TypeError })
   t.throws(() => makeOptions(new X(), { instanceOf: TypeError }))
 })
 
+test('makeOptions creates the defaultOptions object if undefined', (t) => {
+  t.deepEqual(makeOptions({ a: true }, undefined), { a: true })
+})
+
 test('makeOptions throws if default options is not a plain object', (t) => {
   class X {}
-  t.throws(() => makeOptions({}, undefined), { instanceOf: TypeError })
   t.throws(() => makeOptions({}, null), { instanceOf: TypeError })
   t.throws(() => makeOptions({}, ''), { instanceOf: TypeError })
   t.throws(() => makeOptions({}, new X()), { instanceOf: TypeError })

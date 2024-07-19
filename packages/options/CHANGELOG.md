@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Update this changelog
+- Accept undefined `inputOptions` and `defaultOptions` arguments 
 
 ## [v1.0.0] - 19.07.2024
 ### Changed
