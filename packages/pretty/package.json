@@ -1,0 +1,44 @@
+{
+  "name": "@untydev/pretty",
+  "version": "1.0.0",
+  "description": "Convert values to human readable strings",
+  "keywords": [
+    "pretty",
+    "time",
+    "duration",
+    "milliseconds",
+    "hrtime",
+    "format"
+  ],
+  "author": "Untydev <npm@unty.dev>",
+  "license": "MIT",
+  "main": "lib/pretty.js",
+  "type": "module",
+  "engines": {
+    "node": ">=17.9.1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untydev/goodies.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/untydev/goodies/issues"
+  },
+  "homepage": "https://github.com/untydev/goodies#readme",
+  "dependencies": {
+    "@untydev/options": "^1.1.0",
+    "@untydev/types": "^1.2.0"
+  }
+}
