@@ -9,5 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Update this changelog
 
+## [v1.0.0] - 19.07.2024
+### Changed
+- Update this changelog
+
 ### Added
 - `makeOptions` function that merges input and default options objects
