@@ -1,7 +1,7 @@
 {
   "name": "@untydev/result",
   "version": "1.0.0",
-  "description": "Handle function call results using a common type",
+  "description": "Handle function call results using a common type.",
   "keywords": [
     "result",
     "outcome",
