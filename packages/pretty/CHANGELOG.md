@@ -9,5 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Update this changelog
 
+## [1.0.0] - 2024-07-21
+### Changed
+- Update this changelog
+
 ### Added
 - `pretty*` set of functions to convert durations to human-readable strings
