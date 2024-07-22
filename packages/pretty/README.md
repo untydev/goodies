@@ -16,7 +16,7 @@ npm i @untydev/pretty
 import { prettyMilliseconds } from '@untydev/pretty'
 
 console.log(prettyMilliseconds(1000 * 100 + 500))
-// => 1m 40.5s
+// => 1m 40s
 ```
 
 ## API
@@ -49,7 +49,7 @@ console.log(prettyMicroseconds(63))
 // => 63μs
 
 console.log(prettyMicroseconds(411))
-// => 411μs
+// => 0.4ms
 
 console.log(prettyMicroseconds(7892))
 // => 7.9ms
@@ -62,13 +62,13 @@ Formats a time duration expressed in milliseconds into a string.
 ```js
 import { prettyMilliseconds } from '@untydev/pretty'
 
-console.log(prettyMilliseconds(54))
+console.log(pretty.prettyMilliseconds(54))
 // => 54ms
 
-console.log(prettyMilliseconds(379))
-// => 379ms
+console.log(pretty.prettyMilliseconds(379))
+// => 0.4ms
 
-console.log(prettyMilliseconds(6336))
+console.log(pretty.prettyMilliseconds(6336))
 // => 6.3s
 ```
 
@@ -101,5 +101,5 @@ const startTime = process.hrtime.bigint()
 // do something
 
 console.log(process.hrtime.bigint() - startTime)
-// => guesses best output depending on the value
+// => output depends on the duration
 ```

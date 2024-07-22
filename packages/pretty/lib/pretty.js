@@ -1,9 +1,6 @@
 import { isBigInt, ensureInteger, ensureArray } from '@untydev/types'
 
-import { vals } from './detail/constants.js'
-import { decomposeDuration } from './detail/decompose.js'
-import { parseDuration } from './detail/parse.js'
-import { formatDuration, timePrecision } from './detail/format.js'
+import { formatDuration, parseDuration, durationUnits, durationVals } from './detail/duration.js'
 
 /**
  * Generates a human-readable string representation of nanoseconds.
@@ -12,7 +9,7 @@ import { formatDuration, timePrecision } from './detail/format.js'
  * @returns {string} - The formatted string representation of the value.
  */
 export function prettyNanoseconds (value) {
-  return formatDuration(decomposeDuration(BigInt(value)), { precision: timePrecision.SUB_MICROSECOND })
+  return formatDuration(BigInt(value))
 }
 
 /**
@@ -22,7 +19,9 @@ export function prettyNanoseconds (value) {
  * @returns {string} - The formatted string representation of the value.
  */
 export function prettyMicroseconds (value) {
-  return formatDuration(decomposeDuration(BigInt(value) * vals.NANOSECONDS_IN_ONE_MICROSECOND), { precision: timePrecision.SUB_MILLISECOND })
+  return formatDuration(BigInt(value) * durationVals.NANOSECONDS_IN_ONE_MICROSECOND, {
+    inputUnit: durationUnits.MICROSECOND
+  })
 }
 
 /**
@@ -32,7 +31,9 @@ export function prettyMicroseconds (value) {
  * @returns {string} - The formatted string representation of the value.
  */
 export function prettyMilliseconds (value) {
-  return formatDuration(decomposeDuration(BigInt(value) * vals.NANOSECONDS_IN_ONE_MILLISECOND), { precision: timePrecision.SUB_SECOND })
+  return formatDuration(BigInt(value) * durationVals.NANOSECONDS_IN_ONE_MILLISECOND, {
+    inputUnit: durationUnits.MILLISECOND
+  })
 }
 
 /**
@@ -42,7 +43,9 @@ export function prettyMilliseconds (value) {
  * @returns {string} - The formatted string representation of the value.
  */
 export function prettySeconds (value) {
-  return formatDuration(decomposeDuration(BigInt(value) * vals.NANOSECONDS_IN_ONE_SECOND), { precision: timePrecision.SECOND })
+  return formatDuration(BigInt(value) * durationVals.NANOSECONDS_IN_ONE_SECOND, {
+    inputUnit: durationUnits.SECOND
+  })
 }
 
 /**
@@ -53,8 +56,7 @@ export function prettySeconds (value) {
  */
 export function prettyHrtime (value) {
   const prettyNanoseconds = (value) => {
-    const duration = decomposeDuration(BigInt(value))
-    return formatDuration(duration, { precision: timePrecision.guess(duration) })
+    return formatDuration(BigInt(value))
   }
 
   if (isBigInt(value)) {
@@ -75,7 +77,7 @@ export function prettyHrtime (value) {
   const seconds = BigInt(value[0])
   const nanoseconds = BigInt(value[1])
 
-  return prettyNanoseconds(seconds * vals.NANOSECONDS_IN_ONE_SECOND + nanoseconds)
+  return prettyNanoseconds(seconds * durationVals.NANOSECONDS_IN_ONE_SECOND + nanoseconds)
 }
 
 /**
@@ -84,12 +86,12 @@ export function prettyHrtime (value) {
 export function parseNanoseconds (value) {
   const duration = parseDuration(value)
   return duration.ns +
-    duration.us * vals.NANOSECONDS_IN_ONE_MICROSECOND +
-    duration.ms * vals.NANOSECONDS_IN_ONE_MILLISECOND +
-    duration.ss * vals.NANOSECONDS_IN_ONE_SECOND +
-    duration.mm * vals.NANOSECONDS_IN_ONE_MINUTE +
-    duration.hh * vals.NANOSECONDS_IN_ONE_HOUR +
-    duration.dd * vals.NANOSECONDS_IN_ONE_DAY
+    duration.us * durationVals.NANOSECONDS_IN_ONE_MICROSECOND +
+    duration.ms * durationVals.NANOSECONDS_IN_ONE_MILLISECOND +
+    duration.ss * durationVals.NANOSECONDS_IN_ONE_SECOND +
+    duration.mm * durationVals.NANOSECONDS_IN_ONE_MINUTE +
+    duration.hh * durationVals.NANOSECONDS_IN_ONE_HOUR +
+    duration.dd * durationVals.NANOSECONDS_IN_ONE_DAY
 }
 
 /**
@@ -98,12 +100,12 @@ export function parseNanoseconds (value) {
 export function parseMicroseconds (value) {
   const duration = parseDuration(value)
   return (duration.ns +
-    duration.us * vals.NANOSECONDS_IN_ONE_MICROSECOND +
-    duration.ms * vals.NANOSECONDS_IN_ONE_MILLISECOND +
-    duration.ss * vals.NANOSECONDS_IN_ONE_SECOND +
-    duration.mm * vals.NANOSECONDS_IN_ONE_MINUTE +
-    duration.hh * vals.NANOSECONDS_IN_ONE_HOUR +
-    duration.dd * vals.NANOSECONDS_IN_ONE_DAY) /
+    duration.us * durationVals.NANOSECONDS_IN_ONE_MICROSECOND +
+    duration.ms * durationVals.NANOSECONDS_IN_ONE_MILLISECOND +
+    duration.ss * durationVals.NANOSECONDS_IN_ONE_SECOND +
+    duration.mm * durationVals.NANOSECONDS_IN_ONE_MINUTE +
+    duration.hh * durationVals.NANOSECONDS_IN_ONE_HOUR +
+    duration.dd * durationVals.NANOSECONDS_IN_ONE_DAY) /
     1000n
 }
 
@@ -113,12 +115,12 @@ export function parseMicroseconds (value) {
 export function parseMilliseconds (value) {
   const duration = parseDuration(value)
   return (duration.ns +
-    duration.us * vals.NANOSECONDS_IN_ONE_MICROSECOND +
-    duration.ms * vals.NANOSECONDS_IN_ONE_MILLISECOND +
-    duration.ss * vals.NANOSECONDS_IN_ONE_SECOND +
-    duration.mm * vals.NANOSECONDS_IN_ONE_MINUTE +
-    duration.hh * vals.NANOSECONDS_IN_ONE_HOUR +
-    duration.dd * vals.NANOSECONDS_IN_ONE_DAY) /
+    duration.us * durationVals.NANOSECONDS_IN_ONE_MICROSECOND +
+    duration.ms * durationVals.NANOSECONDS_IN_ONE_MILLISECOND +
+    duration.ss * durationVals.NANOSECONDS_IN_ONE_SECOND +
+    duration.mm * durationVals.NANOSECONDS_IN_ONE_MINUTE +
+    duration.hh * durationVals.NANOSECONDS_IN_ONE_HOUR +
+    duration.dd * durationVals.NANOSECONDS_IN_ONE_DAY) /
     1000_000n
 }
 
@@ -128,11 +130,11 @@ export function parseMilliseconds (value) {
 export function parseSeconds (value) {
   const duration = parseDuration(value)
   return (duration.ns +
-    duration.us * vals.NANOSECONDS_IN_ONE_MICROSECOND +
-    duration.ms * vals.NANOSECONDS_IN_ONE_MILLISECOND +
-    duration.ss * vals.NANOSECONDS_IN_ONE_SECOND +
-    duration.mm * vals.NANOSECONDS_IN_ONE_MINUTE +
-    duration.hh * vals.NANOSECONDS_IN_ONE_HOUR +
-    duration.dd * vals.NANOSECONDS_IN_ONE_DAY) /
+    duration.us * durationVals.NANOSECONDS_IN_ONE_MICROSECOND +
+    duration.ms * durationVals.NANOSECONDS_IN_ONE_MILLISECOND +
+    duration.ss * durationVals.NANOSECONDS_IN_ONE_SECOND +
+    duration.mm * durationVals.NANOSECONDS_IN_ONE_MINUTE +
+    duration.hh * durationVals.NANOSECONDS_IN_ONE_HOUR +
+    duration.dd * durationVals.NANOSECONDS_IN_ONE_DAY) /
     1000_000_000n
 }
